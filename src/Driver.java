@@ -28,7 +28,6 @@ public class Driver extends JPanel implements ActionListener{
 		super.paintComponent(g);
 
 		Update u = new Update(fools, rebels);
-		Action a = new Action();
 		Render r = new Render(g, fools, rebels);
 	}
 	
