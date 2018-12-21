@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import constants.Constants;
+
 public class Fool {
 	Sprite s = new Sprite();
 	Constants c = new Constants();

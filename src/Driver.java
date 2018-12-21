@@ -13,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import constants.Constants;
+
 @SuppressWarnings("serial")
 public class Driver extends JPanel implements ActionListener{
 	Constants c = new Constants();
