@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.Stack;
 
+import constants.Constants;
+
 public class Rebel {
 	Sprite s = new Sprite();
 	Constants c = new Constants();
