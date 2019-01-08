@@ -3,6 +3,8 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import main.MainController;
+
 public class Render {
 	
 	public static void render(Graphics g) {
@@ -33,7 +35,9 @@ public class Render {
 	}
 	
 	public static void artisans(Graphics g) {
-		
+		for (int i = 0; i < Settings.ARTISAN_NUM; i++) {
+			MainController.artisans[i].render(g);
+		}
 	}
 	
 	public static void ruffians(Graphics g) {

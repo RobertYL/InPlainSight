@@ -13,8 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import constants.Constants;
-
 @SuppressWarnings("serial")
 public class Driver extends JPanel implements ActionListener{
 	Constants c = new Constants();
@@ -23,7 +21,7 @@ public class Driver extends JPanel implements ActionListener{
 	Rebel[] rebels = new Rebel[c.REBEL_NUM];
 	
 	Initialize init = new Initialize(fools, rebels);
-	Input input = new Input(rebels);
+	//Input input = new Input(rebels);
 	
 	public void paint(Graphics g) {
 		Toolkit.getDefaultToolkit().sync();
@@ -57,8 +55,8 @@ public class Driver extends JPanel implements ActionListener{
 		f.setUndecorated(true);
 		f.setVisible(true);
 		
-		f.addKeyListener(input);
-		f.addMouseListener(input);
+		//f.addKeyListener(input);
+		//f.addMouseListener(input);
 		
 		
 		
