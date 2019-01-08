@@ -5,14 +5,15 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import entity.character.Ruffian;
-
-public class Input implements KeyListener, MouseListener{
-	//Pair[] event = new Pair[c.REBEL_NUM];
-	Ruffian[] ruffians;
+public class Input implements KeyListener, MouseListener {
+	int[] input = new int[3];
 	
-	public Input(Ruffian[] i) {
-		ruffians = i;
+	public Input() {
+		
+	}
+	
+	public int[] getInput() {
+		return input;
 	}
 	
 	@Override
@@ -33,11 +34,6 @@ public class Input implements KeyListener, MouseListener{
 	@Override
 	public void mousePressed(MouseEvent e) {
 		int x = e.getX(), y = e.getY();
-		for (Ruffian r : ruffians) {
-			if (x > r.getX() && x < r.getY() + r.getWidth() && y > r.getY() && y < r.getY() + r.getHeight()) {
-				System.out.println("d");
-			}
-		}
 	}
 
 	@Override
@@ -49,34 +45,33 @@ public class Input implements KeyListener, MouseListener{
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		if (keyCode == 27) System.exit(1);
-		/*
-		if(e.getKeyCode() == 87)
-			ruffians[0].s.facing = 0;
-		else if(e.getKeyCode() == 68)
-			ruffians[0].s.facing = 1;
-		else if(e.getKeyCode() == 83)
-			ruffians[0].s.facing = 2;
-		else if(e.getKeyCode() == 65)
-			ruffians[0].s.facing = 3;
+
+		if(keyCode == 87)
+			input[0] = 1;
+		else if(keyCode == 68)
+			input[0] = 2;
+		else if(keyCode == 83)
+			input[0] = 3;
+		else if(keyCode == 65)
+			input[0] = 4;
 		
-		else if(e.getKeyCode() == 73)
-			ruffians[1].s.facing = 0;
-		else if(e.getKeyCode() == 76)
-			ruffians[1].s.facing = 1;
-		else if(e.getKeyCode() == 75)
-			ruffians[1].s.facing = 2;
-		else if(e.getKeyCode() == 74)
-			ruffians[1].s.facing = 3;
+		else if(keyCode == 73)
+			input[1] = 1;
+		else if(keyCode == 76)
+			input[1] = 2;
+		else if(keyCode == 75)
+			input[1] = 3;
+		else if(keyCode == 74)
+			input[1] = 4;
 		
-		else if(e.getKeyCode() == 38)
-			ruffians[2].s.facing = 0;
-		else if(e.getKeyCode() == 39)
-			ruffians[2].s.facing = 1;
-		else if(e.getKeyCode() == 40)
-			ruffians[2].s.facing = 2;
-		else if(e.getKeyCode() == 37)
-			ruffians[2].s.facing = 3;
-			*/
+		else if(keyCode == 38)
+			input[2] = 1;
+		else if(keyCode == 39)
+			input[2] = 2;
+		else if(keyCode == 40)
+			input[2] = 3;
+		else if(keyCode == 37)
+			input[2] = 4;
 	}
 
 	@Override
