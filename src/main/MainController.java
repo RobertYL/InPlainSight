@@ -10,11 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import entity.character.Artisan;
-import entity.character.Dyer;
-import entity.character.Ruffian;
-import entity.character.Spinner;
-import entity.character.Weaver;
+import entity.character.*;
 import main.Settings;
 import input.Input;
 
@@ -22,13 +18,14 @@ public class MainController extends JPanel implements ActionListener{
 	
 	
 	public static Artisan[] artisans = new Artisan[Settings.ARTISAN_NUM];
-	Ruffian[] ruffians = new Ruffian[3];
-	Input input = new Input(ruffians);
+	public static Ruffian[] ruffians = new Ruffian[Settings.RUFFIAN_NUM];
+	private Input input = new Input();
 	
 	public void paint(Graphics g) {
 		Toolkit.getDefaultToolkit().sync();
 		super.paintComponent(g);
 		
+		Update.update(input.getInput());
 		Render.render(g);
 	}
 	
@@ -38,6 +35,21 @@ public class MainController extends JPanel implements ActionListener{
 	}
 
 	public MainController() {
+		int next = 0;
+		for (int i = 0; i < Settings.SPINNER_NUM; i++, next++) {
+			artisans[next] = new Spinner(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
+		}
+		for (int i = 0; i < Settings.WEAVER_NUM; i++, next++) {
+			artisans[next] = new Weaver(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);
+		}
+		for (int i = 0; i < Settings.DYER_NUM; i++, next++) {
+			artisans[next] = new Dyer(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
+		}
+		
+		ruffians[0] = new Ruffian(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
+		ruffians[1] = new Ruffian(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);
+		ruffians[2] = new Ruffian(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
+		
 		JFrame f = new JFrame();
 		f.setTitle("In Plain Sight");
 		f.setBackground(Color.BLACK);
@@ -53,18 +65,6 @@ public class MainController extends JPanel implements ActionListener{
 		f.setVisible(true);
 		
 		f.addKeyListener(input);
-		
-		int next = 0;
-		for (int i = 0; i < Settings.SPINNER_NUM; i++, next++) {
-			artisans[next] = new Spinner(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
-		}
-		for (int i = 0; i < Settings.WEAVER_NUM; i++, next++) {
-			artisans[next] = new Weaver(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);
-		}
-		for (int i = 0; i < Settings.DYER_NUM; i++, next++) {
-			artisans[next] = new Dyer(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
-		}
-		
 	}
 	Timer t;
 }
