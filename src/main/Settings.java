@@ -6,6 +6,8 @@ public final class Settings {
 	public static final int COL_NUM = 30;
 	public static final int ROW_NUM = 16;
 	
+	public static final int RUFFIAN_NUM = 3;
+	
 	public static final int ARTISAN_NUM = 27;
 	public static final int SPINNER_NUM = 9;
 	public static final int WEAVER_NUM 	= 9;
