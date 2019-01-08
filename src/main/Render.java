@@ -41,6 +41,9 @@ public class Render {
 	}
 	
 	public static void ruffians(Graphics g) {
+		for (int i = 0; i < Settings.RUFFIAN_NUM; i++) {
+			MainController.ruffians[i].render(g);
+		}
 		
 	}
 	
