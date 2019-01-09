@@ -25,7 +25,8 @@ public class MainController extends JPanel implements ActionListener{
 		Toolkit.getDefaultToolkit().sync();
 		super.paintComponent(g);
 		
-		Update.update(input.getInput());
+		input.tick();
+		Update.update(input.getInput(), input.getDTap());
 		Render.render(g);
 	}
 	
