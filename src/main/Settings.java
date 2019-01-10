@@ -1,6 +1,8 @@
 package main;
 
 public final class Settings {
+	public static final int FPS = 30;
+	
 	public static final boolean DEBUG = true;
 	
 	public static final int COL_NUM = 30;
