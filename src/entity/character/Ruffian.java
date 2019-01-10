@@ -13,13 +13,13 @@ public class Ruffian extends Entity {
 		ImageIcon icon = null;
 		switch (disguise) {
 		case 1:
-			icon = new ImageIcon("src/resources/spinner.png");
+			icon = new ImageIcon(Settings.SPINNER_PATH);
 			break;
 		case 2:
-			icon = new ImageIcon("src/resources/weaver.png");
+			icon = new ImageIcon(Settings.WEAVER_PATH);
 			break;
 		case 3:
-			icon = new ImageIcon("src/resources/dyer.png");
+			icon = new ImageIcon(Settings.DYER_PATH);
 		}
 		image = icon.getImage();
 	}

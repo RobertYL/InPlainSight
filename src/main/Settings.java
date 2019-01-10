@@ -13,17 +13,17 @@ public final class Settings {
 	public static final int WEAVER_NUM 	= 9;
 	public static final int DYER_NUM 	= 9;
 	
-	public static final int STRUCTURE_NUM = 9;
-	public static final int WHEEL_NUM 	= 5;
-	public static final int LOOM_NUM 	= 9;
-	public static final int BARREL_NUM 	= 9;
+	public static final int MACHINE_NUM = 15;
+	public static final int WHEEL_NUM 	= 4;
+	public static final int LOOM_NUM 	= 5;
+	public static final int BARREL_NUM 	= 6;
 	
 	public static final int PRODUCTION = 200;
 	
 	public static final int SPINNER_WIDTH 	= 4*8;
-	public static final int SPINNER_HEIGHT 	= 4*8;
+	public static final int SPINNER_HEIGHT 	= 4*16;
 	public static final int WEAVER_WIDTH 	= 4*8;
-	public static final int WEAVER_HEIGHT 	= 4*16;
+	public static final int WEAVER_HEIGHT 	= 4*8;
 	public static final int DYER_WIDTH 		= 4*16;
 	public static final int DYER_HEIGHT 	= 4*16;
 	
@@ -33,4 +33,19 @@ public final class Settings {
 	public static final int LOOM_HEIGHT 	= 4*24;
 	public static final int BARREL_WIDTH 	= 4*16;
 	public static final int BARREL_HEIGHT 	= 4*16;
+	
+	public static final int STOCKPILE_WIDTH = 4*32;
+	public static final int STOCKPILE_HEIGHT = 4*32;
+	
+	public static final String SPINNER_PATH = "src/resources/spinner.png";
+	public static final String WEAVER_PATH = "src/resources/weaver.png";
+	public static final String DYER_PATH = "src/resources/dyer.png";
+	public static final String WHEEL_PATH = "src/resources/wheel.png";
+	public static final String LOOM_PATH = "src/resources/loom.png";
+	public static final String BARREL_PATH = "src/resources/barrel.png";
+	
+	public static final String[] STOCKPILE_PATH = {"src/resources/wool_stockpile.png", 
+												"src/resources/yarn_stockpile.png", 
+												"src/resources/fabric_stockpile.png", 
+												"src/resources/dyed_fabric_stockpile.png"};
 }

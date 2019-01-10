@@ -4,10 +4,12 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+import main.Settings;
+
 public class Dyer extends Artisan {
 	public Dyer(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		ImageIcon icon = new ImageIcon("src/resources/dyer.png");
+		ImageIcon icon = new ImageIcon(Settings.DYER_PATH);
 		image = icon.getImage();
 	}
 	

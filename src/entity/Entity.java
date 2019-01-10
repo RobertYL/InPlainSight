@@ -9,24 +9,30 @@ public abstract class Entity {
 	protected int x;
 	protected int y;
 	protected int state;
+		// Artisans
 		// 01 Face up
 		// 02 Face right
 		// 03 Face down
 		// 04 Face left
-	
 		// 05 Walk up
 		// 06 Walk right
 		// 07 Walk down
 		// 08 Walk left
-	
 		// 09 Work up
 		// 10 Work right
 		// 11 Work down
 		// 12 Work left
 	
-		// 1 broken
-		// 2 idle
-		// 3 working
+		// Structures
+		// 1 Idle
+		// 2 Working
+		// 3 Broken
+	
+		// Stockpiles
+		// 1 Raw Wool
+		// 2 Yarn
+		// 3 Fabric
+		// 4 Dyed Fabric
 	
 	protected Image image;
 	

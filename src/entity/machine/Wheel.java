@@ -1,13 +1,15 @@
-package entity.structure;
+package entity.machine;
 
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
-public class Wheel extends Structure {
+import main.Settings;
+
+public class Wheel extends Machine {
 	public Wheel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		ImageIcon icon = new ImageIcon("src/resources/wheel.png");
+		ImageIcon icon = new ImageIcon(Settings.WHEEL_PATH);
 		image = icon.getImage();
 	}
 

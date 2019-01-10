@@ -1,16 +1,15 @@
-package entity.character;
+package entity.machine;
 
 import java.awt.Graphics;
-
 import javax.swing.ImageIcon;
 
+import entity.machine.Machine;
 import main.Settings;
 
-public class Spinner extends Artisan {
-		
-	public Spinner(int width, int height, int x, int y, int job) {
+public class Loom extends Machine {
+	public Loom(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		ImageIcon icon = new ImageIcon(Settings.SPINNER_PATH);
+		ImageIcon icon = new ImageIcon(Settings.LOOM_PATH);
 		image = icon.getImage();
 	}
 

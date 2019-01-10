@@ -31,7 +31,9 @@ public class Render {
 	}
 	
 	public static void structures(Graphics g) {
-		
+		for (int i = 0; i < Settings.MACHINE_NUM; i++) {
+			MainController.machines[i].render(g);
+		}
 	}
 	
 	public static void artisans(Graphics g) {
