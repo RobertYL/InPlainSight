@@ -63,7 +63,7 @@ public class MainController extends JPanel implements ActionListener{
 		f.setResizable(false);
 
 		f.add(this);
-		t = new Timer(1000/30, this);
+		t = new Timer(1000/Settings.FPS, this);
 		t.start();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

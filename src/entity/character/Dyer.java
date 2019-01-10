@@ -46,4 +46,9 @@ public class Dyer extends Artisan {
 			// drop off
 			// -> grabbing
 	}
+	
+	@Override
+	public void work() {
+		this.work = true;
+	}
 }

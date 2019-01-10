@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+import entity.machine.Machine;
 import main.Settings;
 
 public class Weaver extends Artisan {
@@ -45,5 +46,10 @@ public class Weaver extends Artisan {
 			// walk to stockpile
 			// drop off
 			// -> grabbing
+	}
+	
+	@Override
+	public void work() {
+		this.work = true;
 	}
 }

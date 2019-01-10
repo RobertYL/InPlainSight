@@ -5,6 +5,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import main.Settings;
+
 public class Input implements KeyListener, MouseListener {
 	int[] currentInput = new int[3];
 	int[] input = new int[3];
@@ -22,7 +24,7 @@ public class Input implements KeyListener, MouseListener {
 			if (currentInput[i] != 0) {
 				if (currentInput[i] == input[i]) {
 					if (ticks[i] > 0) dTap[i] = true;
-					ticks[i] = 20;
+					ticks[i] = Settings.FPS/3;
 				}
 				input[i] = currentInput[i];
 			}
