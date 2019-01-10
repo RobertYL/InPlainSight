@@ -1,7 +1,7 @@
 package main;
 
 public class Update {
-	public static void update(int[] input, boolean[] dTap) {
+	public static void update(int[] input, boolean[] dTap, int[] mouse) {
 		for (int i = 0; i < Settings.ARTISAN_NUM; i++) {
 			MainController.artisans[i].ai();
 		}

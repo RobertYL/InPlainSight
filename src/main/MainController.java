@@ -30,7 +30,7 @@ public class MainController extends JPanel implements ActionListener{
 		super.paintComponent(g);
 		
 		input.tick();
-		Update.update(input.getInput(), input.getDTap());
+		Update.update(input.getInput(), input.getDTap(), input.getMouse());
 		Render.render(g);
 	}
 	
