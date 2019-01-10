@@ -13,6 +13,8 @@ public class Input implements KeyListener, MouseListener {
 	int[] ticks = new int[3];
 	boolean[] dTap = new boolean[3];
 	
+	int[] mouse = new int[2];
+	
 	public Input() {
 		
 	}
@@ -39,6 +41,10 @@ public class Input implements KeyListener, MouseListener {
 		return dTap;
 	}
 	
+	public int[] getMouse() {
+		return mouse;
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
@@ -56,7 +62,8 @@ public class Input implements KeyListener, MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		int x = e.getX(), y = e.getY();
+		mouse[0] = e.getX();
+		mouse[1] = e.getY();
 	}
 
 	@Override
