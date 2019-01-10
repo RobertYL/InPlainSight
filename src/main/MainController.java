@@ -13,6 +13,7 @@ import javax.swing.Timer;
 import entity.character.*;
 import entity.machine.*;
 import main.Settings;
+import map.Map;
 import input.Input;
 
 public class MainController extends JPanel implements ActionListener{
@@ -22,6 +23,7 @@ public class MainController extends JPanel implements ActionListener{
 	public static Ruffian[] ruffians = new Ruffian[Settings.RUFFIAN_NUM];
 	public static Machine[] machines = new Machine[Settings.MACHINE_NUM];
 	private Input input = new Input();
+	public Map map = new Map();
 	
 	public void paint(Graphics g) {
 		Toolkit.getDefaultToolkit().sync();

@@ -1,6 +1,8 @@
 package map;
 
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import main.Settings;
@@ -22,11 +24,16 @@ public class Map {
 	public Pair<Integer, Integer> woolStockpile, yarnStockpile, fabricStockpile, dyedFabricStockpile;
 	
 	public Map() {
-		
-		
-		Scanner sc = new Scanner("src/map/default.map");
+		Scanner sc = null;
+		try {
+			sc = new Scanner(new File("src/map/default.map"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for(int i = 0; i < Settings.ROW_NUM; i++) {
 			for(int j = 0; j < Settings.COL_NUM; j++) {
+				System.out.println("d");
 				map[j][i] = sc.nextInt();
 				if(map[j][i] == 2 && !(woolStockpile instanceof Pair))
 					woolStockpile = new Pair<Integer, Integer>(j, i);
