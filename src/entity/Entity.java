@@ -56,5 +56,9 @@ public abstract class Entity {
 	public int getState() {return state;}
 	public void setState(int state) {this.state = state;}
 	
+	public boolean isClicked(int x, int y) {
+		return x > this.x && x < this.x + this.width && y > this.y && y < this.y + this.height;
+	}
+	
 	public abstract void render(Graphics g);
 }
