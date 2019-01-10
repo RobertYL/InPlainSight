@@ -3,9 +3,10 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import main.MainController;
+import map.Map;
 
 public class Render {
+	
 	
 	public static void render(Graphics g) {
 		map(g);
@@ -27,7 +28,13 @@ public class Render {
 	}
 	
 	public static void map(Graphics g) {
-		
+		for(int i = 0; i < Settings.ROW_NUM; i++) {
+			for(int j = 0; j < Settings.COL_NUM; j++) {
+				if(MainController.map.map[j][i] == 1) {
+					g.fillRect(j*64, i*64+28, 64, 64);
+				}
+			}
+		}
 	}
 	
 	public static void structures(Graphics g) {

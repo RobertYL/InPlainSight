@@ -10,18 +10,17 @@ public abstract class Entity {
 	protected int y;
 	protected int state;
 		// Artisans
-		// 01 Face up
-		// 02 Face right
-		// 03 Face down
-		// 04 Face left
-		// 05 Walk up
-		// 06 Walk right
-		// 07 Walk down
-		// 08 Walk left
-		// 09 Work up
-		// 10 Work right
-		// 11 Work down
-		// 12 Work left
+		// 01 Walk up
+		// 02 Walk right
+		// 03 Walk down
+		// 04 Walk left
+		// 05 Walk up + carry
+		// 06 Walk right + carry
+		// 07 Walk down + carry
+		// 08 Walk left + carry
+		// 09 Working
+		// 10 Pick up
+		// 11 Drop off
 	
 		// Structures
 		// 1 Idle

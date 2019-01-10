@@ -28,7 +28,6 @@ public class Map {
 		try {
 			sc = new Scanner(new File("src/map/default.map"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for(int i = 0; i < Settings.ROW_NUM; i++) {
@@ -51,33 +50,28 @@ public class Map {
 			}
 		}
 		if (Settings.DEBUG) {
+			System.out.println("Map:");
 			for (int i = 0; i < Settings.ROW_NUM; i++) {
 				for (int j = 0; j < Settings.COL_NUM; j++) {
 					System.out.print(map[j][i] + " ");
 				}
 				System.out.println();
 			}
-			System.out.println("WHEELS");
+			System.out.println();
+			System.out.println("Spinning Wheels (x, y):");
 			for (Pair<Integer, Integer> pair : wheels) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
-			System.out.println("LOOMS");
+			System.out.println();
+			System.out.println("Looms (x,y):");
 			for (Pair<Integer, Integer> pair : looms) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
-			System.out.println("BARRELS");
+			System.out.println();
+			System.out.println("Barrels (x,y):");
 			for (Pair<Integer, Integer> pair : barrels) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
 		}
-	}
-}
-
-class Pair<A, B> {
-	public final A first;
-	public final B second;
-	public Pair(final A first, final B second) {
-		this.first = first;
-		this.second = second;
 	}
 }

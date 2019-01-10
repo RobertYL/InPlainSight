@@ -27,6 +27,20 @@ public class Spinner extends Artisan {
 	
 	@Override
 	public void ai() {
+		switch(goal) {
+		case 1:
+			
+		case 2:
+			
+		case 3:
+			
+		case 4:
+		
+		default:
+			goal = 1;
+			break;
+		}
+		
 		// grabbing
 			// bfs to stockpile
 			// walk to stockpile
