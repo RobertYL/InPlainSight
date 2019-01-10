@@ -1,10 +1,10 @@
 package entity.character;
 
 import java.awt.Graphics;
-
 import javax.swing.ImageIcon;
 
 import entity.Entity;
+import main.Settings;
 
 public class Ruffian extends Entity {
 
@@ -39,8 +39,10 @@ public class Ruffian extends Entity {
 		case 4:
 			x = -1;
 		}
-		this.x += x * speed;
-		this.y += y * speed;
+		this.x += x * 4;
+		this.y += y * 4;
+		this.x = Math.max(Math.min(this.x, Settings.COL_NUM * 64 - this.width), 0);
+		this.y = Math.max(Math.min(this.y, Settings.ROW_NUM * 64 - this.height + 28), 28);
 	}
 	
 	public void render(Graphics g) {

@@ -29,7 +29,6 @@ public abstract class Entity {
 		// 3 working
 	
 	protected Image image;
-	protected int speed = 4;
 	
 	public Entity(int width, int height, int x, int y) {
 		this.width = width;
