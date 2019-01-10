@@ -18,8 +18,32 @@ public class Weaver extends Artisan {
 		g.drawImage(image, x, y, null);
 	}
 	
+	private int goal;
+	// 1 idling (just walking around randomly, starts if machine is broken)
+	// 2 grabbing (grab from stockpile)
+	// 3 processing (move to machine)
+	// 4 stocking (place into next stockpile)
+
 	@Override
 	public void ai() {
-		
+		// grabbing
+			// bfs to stockpile
+			// walk to stockpile
+			// pick up
+			// -> idling
+		// processing
+			// bfs to claimed machine
+			// move to machine
+			// process at machine
+			// -> stocking
+		// idling
+			// check if a machine is available
+			// if available claim and -> processing
+			// else -> idle
+		// stocking
+			// bfs to stockpile
+			// walk to stockpile
+			// drop off
+			// -> grabbing
 	}
 }
