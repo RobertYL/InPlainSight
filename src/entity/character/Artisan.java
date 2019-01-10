@@ -17,4 +17,6 @@ public abstract class Artisan extends Entity {
 	public Artisan(int width, int height, int job) {
 		this(width, height, 0, 0, job);
 	}
+
+	public abstract void ai();
 }
