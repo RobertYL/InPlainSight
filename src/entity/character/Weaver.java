@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
-import entity.machine.Machine;
 import main.Settings;
 
 public class Weaver extends Artisan {
@@ -16,6 +15,7 @@ public class Weaver extends Artisan {
 
 	@Override
 	public void render(Graphics g) {
+		if (work) return;
 		g.drawImage(image, x, y, null);
 	}
 	
