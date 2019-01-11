@@ -3,9 +3,10 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import main.MainController;
+import map.Map;
 
 public class Render {
+	
 	
 	public static void render(Graphics g) {
 		map(g);
@@ -27,12 +28,12 @@ public class Render {
 	}
 	
 	public static void map(Graphics g) {
-		
+		Map.render(g);
 	}
 	
 	public static void structures(Graphics g) {
 		for (int i = 0; i < Settings.MACHINE_NUM; i++) {
-			MainController.machines[i].render(g);
+			//MainController.machines[i].render(g);
 		}
 	}
 	

@@ -1,9 +1,13 @@
 package map;
 
-import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.ImageIcon;
 
 import main.Settings;
 
@@ -22,13 +26,16 @@ public class Map {
 	public ArrayList<Pair<Integer, Integer>> looms = new ArrayList<Pair<Integer, Integer>>();
 	public ArrayList<Pair<Integer, Integer>> barrels = new ArrayList<Pair<Integer, Integer>>();
 	public Pair<Integer, Integer> woolStockpile, yarnStockpile, fabricStockpile, dyedFabricStockpile;
+	private static Image image;
 	
 	public Map() {
+		ImageIcon icon = new ImageIcon(Settings.BACKGROUND_PATH);
+		image = icon.getImage();
+		
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File("src/map/default.map"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for(int i = 0; i < Settings.ROW_NUM; i++) {
@@ -51,33 +58,32 @@ public class Map {
 			}
 		}
 		if (Settings.DEBUG) {
+			System.out.println("Map:");
 			for (int i = 0; i < Settings.ROW_NUM; i++) {
 				for (int j = 0; j < Settings.COL_NUM; j++) {
 					System.out.print(map[j][i] + " ");
 				}
 				System.out.println();
 			}
-			System.out.println("WHEELS");
+			System.out.println();
+			System.out.println("Spinning Wheels (x, y):");
 			for (Pair<Integer, Integer> pair : wheels) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
-			System.out.println("LOOMS");
+			System.out.println();
+			System.out.println("Looms (x,y):");
 			for (Pair<Integer, Integer> pair : looms) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
-			System.out.println("BARRELS");
+			System.out.println();
+			System.out.println("Barrels (x,y):");
 			for (Pair<Integer, Integer> pair : barrels) {
-				System.out.println(pair.first + " " + pair.second);
+				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
 		}
 	}
-}
-
-class Pair<A, B> {
-	public final A first;
-	public final B second;
-	public Pair(final A first, final B second) {
-		this.first = first;
-		this.second = second;
+	
+	public static void render(Graphics g) {
+		g.drawImage(image, 0, 28, null);
 	}
 }
