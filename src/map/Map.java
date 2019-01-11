@@ -1,9 +1,13 @@
 package map;
 
-import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.ImageIcon;
 
 import main.Settings;
 
@@ -22,8 +26,12 @@ public class Map {
 	public ArrayList<Pair<Integer, Integer>> looms = new ArrayList<Pair<Integer, Integer>>();
 	public ArrayList<Pair<Integer, Integer>> barrels = new ArrayList<Pair<Integer, Integer>>();
 	public Pair<Integer, Integer> woolStockpile, yarnStockpile, fabricStockpile, dyedFabricStockpile;
+	private static Image image;
 	
 	public Map() {
+		ImageIcon icon = new ImageIcon(Settings.BACKGROUND_PATH);
+		image = icon.getImage();
+		
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File("src/map/default.map"));
@@ -73,5 +81,9 @@ public class Map {
 				System.out.println("  (" + pair.first + ", " + pair.second + ")");
 			}
 		}
+	}
+	
+	public static void render(Graphics g) {
+		g.drawImage(image, 0, 28, null);
 	}
 }

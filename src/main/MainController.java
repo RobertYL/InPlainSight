@@ -51,12 +51,12 @@ public class MainController extends JPanel implements ActionListener{
 		for (int i = 0; i < Settings.DYER_NUM; i++, next++) 
 			artisans[next] = new Dyer(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
 		next = 0;
-		for (int i = 0; i < Settings.WHEEL_NUM; i++, next++) 
-			machines[next] = new Wheel(Settings.WHEEL_WIDTH, Settings.WHEEL_HEIGHT, map.wheels.get(i).first*64, map.wheels.get(i).second*64 + 28, 1);
-		for (int i = 0; i < Settings.LOOM_NUM; i++, next++) 
-			machines[next] = new Loom(Settings.LOOM_WIDTH, Settings.LOOM_HEIGHT, map.looms.get(i).first*64, map.looms.get(i).second*64 + 28, 2);
-		for (int i = 0; i < Settings.BARREL_NUM; i++, next++) 
-			machines[next] = new Barrel(Settings.BARREL_WIDTH, Settings.BARREL_HEIGHT, map.barrels.get(i).first*64, map.barrels.get(i).second*64 + 28, 3);
+		//for (int i = 0; i < Settings.WHEEL_NUM; i++, next++) 
+			//machines[next] = new Wheel(Settings.WHEEL_WIDTH, Settings.WHEEL_HEIGHT, map.wheels.get(i).first*64, map.wheels.get(i).second*64 + 28, 1);
+		//for (int i = 0; i < Settings.LOOM_NUM; i++, next++) 
+			//machines[next] = new Loom(Settings.LOOM_WIDTH, Settings.LOOM_HEIGHT, map.looms.get(i).first*64, map.looms.get(i).second*64 + 28, 2);
+		//for (int i = 0; i < Settings.BARREL_NUM; i++, next++) 
+			//machines[next] = new Barrel(Settings.BARREL_WIDTH, Settings.BARREL_HEIGHT, map.barrels.get(i).first*64, map.barrels.get(i).second*64 + 28, 3);
 		
 		ruffians[0] = new Ruffian(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
 		ruffians[1] = new Ruffian(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);

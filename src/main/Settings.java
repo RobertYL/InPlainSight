@@ -38,6 +38,8 @@ public final class Settings {
 	public static final int STOCKPILE_WIDTH = 4*32;
 	public static final int STOCKPILE_HEIGHT= 4*32;
 	
+	public static final String BACKGROUND_PATH = "src/resources/background.png";
+	
 	public static final String SPINNER_PATH = "src/resources/spinner.png";
 	public static final String WEAVER_PATH 	= "src/resources/weaver.png";
 	public static final String DYER_PATH 	= "src/resources/dyer.png";

@@ -28,18 +28,12 @@ public class Render {
 	}
 	
 	public static void map(Graphics g) {
-		for(int i = 0; i < Settings.ROW_NUM; i++) {
-			for(int j = 0; j < Settings.COL_NUM; j++) {
-				if(MainController.map.map[j][i] == 1) {
-					g.fillRect(j*64, i*64+28, 64, 64);
-				}
-			}
-		}
+		Map.render(g);
 	}
 	
 	public static void structures(Graphics g) {
 		for (int i = 0; i < Settings.MACHINE_NUM; i++) {
-			MainController.machines[i].render(g);
+			//MainController.machines[i].render(g);
 		}
 	}
 	
