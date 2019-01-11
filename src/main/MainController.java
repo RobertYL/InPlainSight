@@ -2,10 +2,12 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -74,6 +76,9 @@ public class MainController extends JPanel implements ActionListener{
 		f.setVisible(true);
 		
 		f.addKeyListener(input);
+		
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		f.getRootPane().setCursor(toolkit.createCustomCursor(new ImageIcon("src/resources/barrel.png").getImage(), new Point(f.getX(), f.getY()), "img"));
 	}
 	Timer t;
 }
