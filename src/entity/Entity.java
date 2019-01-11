@@ -2,6 +2,11 @@ package entity;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public abstract class Entity {
 	protected int width;
@@ -35,11 +40,18 @@ public abstract class Entity {
 	
 	protected Image image;
 	
+	//animation variables
+	protected BufferedImage sheet;
+	protected int frames;
+	
 	public Entity(int width, int height, int x, int y) {
 		this.width = width;
 		this.height = height;
 		this.x = x;
 		this.y = y;
+		try {
+			sheet = ImageIO.read(new File("src/resources/sheet.png"));
+		} catch (IOException e) {}
 	}
 	
 	public Entity(int width, int height) {
