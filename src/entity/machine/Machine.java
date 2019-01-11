@@ -13,4 +13,6 @@ public abstract class Machine extends Entity {
 		this.state = 1;
 		this.job = job;
 	}
+	
+	public abstract void tick();
 }

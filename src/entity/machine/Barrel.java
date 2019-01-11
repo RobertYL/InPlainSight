@@ -17,4 +17,9 @@ public class Barrel extends Machine {
 	public void render(Graphics g) {
 		g.drawImage(image, x, y, null);
 	}
+	
+	@Override
+	public void tick() {
+		
+	}
 }
