@@ -10,5 +10,10 @@ public class Update {
 			MainController.ruffians[i].update(input[i]);
 			if(dTap[i]) System.out.println(i);//do something later
 		}
+		
+		for (int i = 0; i < Settings.MACHINE_NUM; i++) {
+			MainController.machines[i].work();
+			MainController.machines[i].tick();
+		}
 	}
 }
