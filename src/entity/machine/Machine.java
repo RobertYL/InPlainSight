@@ -15,4 +15,5 @@ public abstract class Machine extends Entity {
 	}
 	
 	public abstract void tick();
+	public abstract void work();
 }

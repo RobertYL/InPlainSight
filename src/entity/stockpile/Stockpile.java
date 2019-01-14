@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import entity.Entity;
 import main.Settings;
 
-public class Stockpile extends Entity{
+public class Stockpile extends Entity {
 	private int job;
 	// 1 Raw Wool
 	// 2 Yarn
