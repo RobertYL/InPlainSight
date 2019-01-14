@@ -11,6 +11,7 @@ public class Wheel extends Machine {
 		super(width, height, x, y, job);
 		ImageIcon icon = new ImageIcon(Settings.WHEEL_PATH);
 		image = icon.getImage();
+		image = sheet.getSubimage(720, 392, 96, 64);
 	}
 
 	@Override
@@ -20,6 +21,11 @@ public class Wheel extends Machine {
 	
 	@Override
 	public void tick() {
+		
+	}
+	
+	@Override
+	public void work() {
 		
 	}
 }

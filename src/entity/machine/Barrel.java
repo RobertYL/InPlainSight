@@ -11,6 +11,7 @@ public class Barrel extends Machine {
 		super(width, height, x, y, job);
 		ImageIcon icon = new ImageIcon(Settings.BARREL_PATH);
 		image = icon.getImage();
+		image = sheet.getSubimage(888, 392, 64, 64);
 	}
 
 	@Override
@@ -20,6 +21,11 @@ public class Barrel extends Machine {
 	
 	@Override
 	public void tick() {
+		
+	}
+	
+	@Override
+	public void work() {
 		
 	}
 }
