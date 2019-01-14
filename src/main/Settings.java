@@ -17,9 +17,9 @@ public final class Settings {
 	public static final int DYER_NUM 	= 9;
 	
 	public static final int MACHINE_NUM = 15;
-	public static final int WHEEL_NUM 	= 6;
+	public static final int WHEEL_NUM 	= 4;
 	public static final int LOOM_NUM 	= 5;
-	public static final int BARREL_NUM 	= 4;
+	public static final int BARREL_NUM 	= 6;
 	
 	public static final int SPINNER_WIDTH 	= 4*8;
 	public static final int SPINNER_HEIGHT 	= 4*16;
