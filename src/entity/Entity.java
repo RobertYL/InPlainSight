@@ -43,6 +43,8 @@ public abstract class Entity {
 	//animation variables
 	protected BufferedImage sheet;
 	protected int frames;
+	protected int frameX;
+	protected int frameY;
 	
 	public Entity(int width, int height, int x, int y) {
 		this.width = width;
@@ -50,7 +52,7 @@ public abstract class Entity {
 		this.x = x;
 		this.y = y;
 		try {
-			sheet = ImageIO.read(new File("src/resources/sheet.png"));
+			sheet = ImageIO.read(new File("src/resources/spritesheet.png"));
 		} catch (IOException e) {}
 	}
 	
