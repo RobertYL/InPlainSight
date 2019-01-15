@@ -62,12 +62,6 @@ public class MainController extends JPanel implements ActionListener{
 		for (int i = 0; i < Settings.BARREL_NUM; i++, next++)  {
 			machines[next] = new Barrel(Settings.BARREL_WIDTH, Settings.BARREL_HEIGHT, map.barrels.get(i).first*64, map.barrels.get(i).second*64 + 28, 3);
 		}
-		for (int i = 0; i < Settings.ROW_NUM; i++) {
-			for (int j = 0; j < Settings.COL_NUM; j++) {
-				int type = map.map[j][i];
-
-			}
-		}
 		ruffians[0] = new Ruffian(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
 		ruffians[1] = new Ruffian(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);
 		ruffians[2] = new Ruffian(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
