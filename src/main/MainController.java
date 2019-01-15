@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -27,13 +28,25 @@ public class MainController extends JPanel implements ActionListener{
 	private Input input;
 	public static Map map;
 	
+	private boolean inMenu = true;
+	
 	public void paint(Graphics g) {
 		Toolkit.getDefaultToolkit().sync();
 		super.paintComponent(g);
-		
-		input.tick();
-		Update.update(input.getInput(), input.getDTap(), input.getMouse());
-		Render.render(g);
+		if (inMenu) {
+			if (input.getMouse()[0] != 0) {
+				inMenu = false;
+			}
+			g.setColor(Color.BLACK);
+			g.fillRect(0, 0, 1920, 1080);
+			g.setColor(Color.WHITE);
+			g.setFont(new Font("TimesRoman", Font.PLAIN, 200));
+			g.drawString("click anywhere to start", 50, 540);
+		} else {
+			input.tick();
+			Update.update(input.getInput(), input.getDTap(), input.getMouse());
+			Render.render(g);
+		}
 	}
 	
 	@Override
@@ -46,12 +59,15 @@ public class MainController extends JPanel implements ActionListener{
 		map = new Map();
 		
 		int next = 0;
-		for (int i = 0; i < Settings.SPINNER_NUM; i++, next++) 
+		for (int i = 0; i < Settings.SPINNER_NUM; i++, next++) {
 			artisans[next] = new Spinner(Settings.SPINNER_WIDTH, Settings.SPINNER_HEIGHT, 0, 28, 1);
-		for (int i = 0; i < Settings.WEAVER_NUM; i++, next++) 
+		}
+		for (int i = 0; i < Settings.WEAVER_NUM; i++, next++) {
 			artisans[next] = new Weaver(Settings.WEAVER_WIDTH, Settings.WEAVER_HEIGHT, 0, 28, 2);
-		for (int i = 0; i < Settings.DYER_NUM; i++, next++) 
+		}
+		for (int i = 0; i < Settings.DYER_NUM; i++, next++) {
 			artisans[next] = new Dyer(Settings.DYER_WIDTH, Settings.DYER_HEIGHT, 0, 28, 3);
+		}
 		next = 0;
 		for (int i = 0; i < Settings.WHEEL_NUM; i++, next++) {
 			machines[next] = new Wheel(Settings.WHEEL_WIDTH, Settings.WHEEL_HEIGHT, map.wheels.get(i).first*64, map.wheels.get(i).second*64 + 28, 1);
@@ -81,6 +97,7 @@ public class MainController extends JPanel implements ActionListener{
 		f.setVisible(true);
 		
 		f.addKeyListener(input);
+		f.addMouseListener(input);
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		f.getRootPane().setCursor(toolkit.createCustomCursor(new ImageIcon("src/resources/barrel.png").getImage(), new Point(f.getX(), f.getY()), "img"));
