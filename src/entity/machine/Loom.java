@@ -46,6 +46,6 @@ public class Loom extends Machine {
 	@Override
 	public void work() {
 		if (frames > 0) return;
-		this.frames = Settings.LOOM_FRAMES;
+		frames = Settings.LOOM_FRAMES;
 	}
 }
