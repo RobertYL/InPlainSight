@@ -275,8 +275,24 @@ public final class Sheet {
 			{64, 64},
 	};
 	
-	public final int[][] WOOL = {};
-	public final int[][] YARN = {};
-	public final int[][] FBRC = {};
-	public final int[][] DFRC = {};
+	public final int[][] WOOL = {
+			{960, 4},
+			{960, 132},
+			{920, 260},
+	};
+	public final int[][] YARN = {
+			{828, 4},
+			{828, 132},
+			{828, 260},
+	};
+	public final int[][] FBRC = {
+			{696, 4},
+			{696, 132},
+			{696, 260},
+	};
+	public final int[][] DFRC = {
+			{564, 4},
+			{564, 132},
+			{564, 260},
+	};
 }
