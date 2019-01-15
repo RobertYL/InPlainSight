@@ -8,7 +8,7 @@ public class Barrel extends Machine {
 	public Barrel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
 		image = sheet.getSubimage(888, 392, 64, 64);
-		frameX = 276;
+		frameX = 4;
 		frameY = 1144;
 	}
 
@@ -21,14 +21,20 @@ public class Barrel extends Machine {
 	public void tick() {
 		frames--;
 		if (frames < 0) {
-			image = sheet.getSubimage(888, 392, 64, 64);
+			image = sheet.getSubimage(720, 392, 96, 64);
 			return;
 		}
-		image = sheet.getSubimage(frameX, frameY, 96, 84);
+		image = sheet.getSubimage(frameX, frameY, 64, 96);
 		if (frames % 4 == 0) {
-			frameY = 1144;
+			if (frames % 12 == 0) {
+				frameX = 4;
+				frameY = 1144;
+			} else {
+				frameX = 4;
+				frameY += 96 + 4;
+			}
 		} else {
-			frameY += 84 + 4;
+			frameX += 64 + 4;
 		}
 	}
 	
