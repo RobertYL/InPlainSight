@@ -17,8 +17,8 @@ public class Stockpile extends Entity {
 		super(width, height, x, y);
 		this.state = 1;
 		this.job = job;
-		ImageIcon icon = new ImageIcon(Settings.STOCKPILE_PATH[job-1]);
-		image = icon.getImage();
+		//ImageIcon icon = new ImageIcon(Settings.STOCKPILE_PATH[job-1]);
+		//image = icon.getImage();
 	}
 
 	@Override

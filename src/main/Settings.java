@@ -44,6 +44,7 @@ public final class Settings {
 	public static final int STOCK_FRAMES 	= 4;
 	
 	public static final String BACKGROUND_PATH = "src/resources/background.png";
+	public static final String SHEET_PATH = "src/resources/spritesheet.png";
 	
 	public static final String SPINNER_PATH = "src/resources/spinner.png";
 	public static final String WEAVER_PATH 	= "src/resources/weaver.png";

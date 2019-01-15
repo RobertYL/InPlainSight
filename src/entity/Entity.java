@@ -8,6 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import main.Settings;
+
 public abstract class Entity {
 	protected int width;
 	protected int height;
@@ -15,17 +17,23 @@ public abstract class Entity {
 	protected int y;
 	protected int state;
 		// Artisans
-		// 01 Walk up
-		// 02 Walk right
-		// 03 Walk down
-		// 04 Walk left
-		// 05 Walk up + carry
-		// 06 Walk right + carry
-		// 07 Walk down + carry
-		// 08 Walk left + carry
-		// 09 Working
-		// 10 Pick up
-		// 11 Drop off
+		// 01 Walk l
+		// 02 Walk d
+		// 03 Walk u
+		// 04 Walk r
+		// 05 1Walk l + carry
+		// 06 1Walk d + carry
+		// 07 1Walk u + carry
+		// 08 1Walk r + carry
+		// 09 2Walk l + carry
+		// 10 2Walk d + carry
+		// 11 2Walk u + carry
+		// 12 2Walk r + carry
+		// 13 Stock l
+		// 14 Stock d
+		// 15 Stock u
+		// 16 Stock r
+		// 17 Working
 	
 		// Structures
 		// 1 Idle
@@ -52,7 +60,7 @@ public abstract class Entity {
 		this.x = x;
 		this.y = y;
 		try {
-			sheet = ImageIO.read(new File("src/resources/spritesheet.png"));
+			sheet = ImageIO.read(new File(Settings.SHEET_PATH));
 		} catch (IOException e) {}
 	}
 	
