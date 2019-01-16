@@ -39,6 +39,8 @@ public class MainController extends JPanel implements ActionListener{
 			}
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, 1920, 1080);
+			ImageIcon icon = new ImageIcon("src/resources/title.png");
+			g.drawImage(icon.getImage(), 0, 0, null);
 			g.setColor(Color.WHITE);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 200));
 			g.drawString("click anywhere to start", 50, 540);
