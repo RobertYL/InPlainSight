@@ -21,6 +21,6 @@ public abstract class Artisan extends Entity {
 	
 	public boolean isWorking() {return work;}
 	
-	public abstract void ai();	
+	public abstract void ai();
 	public abstract void work();
 }
