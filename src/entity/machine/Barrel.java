@@ -6,6 +6,7 @@ import main.Settings;
 import main.Sheet;
 
 public class Barrel extends Machine {
+	private int i = 0;
 	public Barrel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
 		sprite = sheet.getSubimage(Sheet.BRRL[getState()][0], Sheet.BRRL[getState()][1], Sheet.BRRL_SIZE[getState()][0], Sheet.BRRL_SIZE[getState()][1]);
@@ -18,23 +19,26 @@ public class Barrel extends Machine {
 	
 	@Override
 	public void tick() {
-		frames--;
-		if (frames < 0) {
-			sprite = sheet.getSubimage(720, 392, 96, 64);
-			return;
-		}
-		sprite = sheet.getSubimage(frameX, frameY, 64, 96);
-		if (frames % 4 == 0) {
-			if (frames % 12 == 0) {
-				frameX = 4;
-				frameY = 1144;
-			} else {
-				frameX = 4;
-				frameY += 96 + 4;
+		if (i % 3 == 0) {
+			frames--;
+			if (frames < 0) {
+				sprite = sheet.getSubimage(720, 392, 96, 64);
+				return;
 			}
-		} else {
-			frameX += 64 + 4;
+			sprite = sheet.getSubimage(frameX, frameY, 64, 96);
+			if (frames % 4 == 0) {
+				if (frames % 12 == 0) {
+					frameX = 4;
+					frameY = 1144;
+				} else {
+					frameX = 4;
+					frameY += 96 + 4;
+				}
+			} else {
+				frameX += 64 + 4;
+			}
 		}
+		i++;
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import main.Settings;
 
 public class Wheel extends Machine {
+	private int i = 0;
 	public Wheel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
 		sprite = sheet.getSubimage(720, 392, 96, 64);
@@ -21,17 +22,20 @@ public class Wheel extends Machine {
 	
 	@Override
 	public void tick() {
-		frames--;
-		if (frames < 0) {
-			sprite = sheet.getSubimage(888, 392, 64, 64);
-			return;
+		if (i % 3 == 0) {
+			frames--;
+			if (frames < 0) {
+				sprite = sheet.getSubimage(888, 392, 64, 64);
+				return;
+			}
+			sprite = sheet.getSubimage(frameX, frameY, 96, 84);
+			if (frames % 4 == 0) {
+				frameY = 1144;
+			} else {
+				frameY += 84 + 4;
+			}
 		}
-		sprite = sheet.getSubimage(frameX, frameY, 96, 84);
-		if (frames % 4 == 0) {
-			frameY = 1144;
-		} else {
-			frameY += 84 + 4;
-		}
+		i++;
 	}
 
 	@Override
