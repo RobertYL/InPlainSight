@@ -68,7 +68,8 @@ public class Input implements KeyListener, MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		
+		mouse[0] = 0;
+		mouse[1] = 0;
 	}
 
 	@Override
