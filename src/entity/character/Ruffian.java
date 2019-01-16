@@ -23,7 +23,7 @@ public class Ruffian extends Entity {
 		}
 		image = icon.getImage();
 	}
-	
+
 	public void update(int direction) {
 		int x = 0, y = 0;
 		switch (direction) {
