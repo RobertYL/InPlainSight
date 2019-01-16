@@ -10,13 +10,13 @@ public class Weaver extends Artisan {
 	public Weaver(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
 		ImageIcon icon = new ImageIcon(Settings.WEAVER_PATH);
-		image = icon.getImage();
+		sprite = icon.getImage();
 	}
 
 	@Override
 	public void render(Graphics g) {
 		if (work) return;
-		g.drawImage(image, x, y, null);
+		g.drawImage(sprite, getX(), getY(), null);
 	}
 	
 	private int goal;

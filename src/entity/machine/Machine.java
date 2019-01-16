@@ -10,10 +10,16 @@ public abstract class Machine extends Entity {
 	
 	public Machine(int width, int height, int x, int y, int job) {
 		super(width, height, x, y);
-		this.state = 1;
+		setState(0);
 		this.job = job;
 	}
 	
 	public abstract void tick();
+	
+	public abstract void idle();
+	public abstract boolean isIdle();
 	public abstract void work();
+	public abstract boolean isWork();
+	public abstract void broken();
+	public abstract boolean isBroken();
 }

@@ -11,12 +11,12 @@ public class Spinner extends Artisan {
 	public Spinner(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
 		ImageIcon icon = new ImageIcon(Settings.SPINNER_PATH);
-		image = icon.getImage();
+		sprite = icon.getImage();
 	}
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(image, x, y, null);
+		g.drawImage(sprite, getX(), getY(), null);
 	}
 	
 	private int goal;

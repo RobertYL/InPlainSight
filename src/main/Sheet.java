@@ -1,7 +1,7 @@
 package main;
 
 public final class Sheet {
-	public final int[][] SPNR = {
+	public static final int[][] SPNR = {
 			// Walk l
 			{276,4, 276,72, 276,4, 276,72},
 			// Walk d
@@ -48,7 +48,7 @@ public final class Sheet {
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,},
 	};
-	public final int[][] SPNR_SIZE = {
+	public static final int[][] SPNR_SIZE = {
 			{32, 64},
 			{32, 64},
 			{32, 64},
@@ -68,7 +68,7 @@ public final class Sheet {
 			{1, 1},
 	};
 	
-	public final int[][] WEVR = {
+	public static final int[][] WEVR = {
 			// Walk l
 			{420,4, 420,40, 420,4, 420,40},
 			// Walk d
@@ -115,7 +115,7 @@ public final class Sheet {
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,},
 	};
-	public final int[][] WEVR_SIZE = {
+	public static final int[][] WEVR_SIZE = {
 			{32, 32},
 			{32, 32},
 			{32, 32},
@@ -135,7 +135,7 @@ public final class Sheet {
 			{1, 1},
 	};
 	
-	public final int[][] DYER = {
+	public static final int[][] DYER = {
 			// Walk l
 			{4,4, 4,72, 4,4, 4,72},
 			// Walk d
@@ -182,7 +182,7 @@ public final class Sheet {
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,
 				564,4, 564,4, 564,4, 564,4, 564,4, 564,4,},
 	};
-	public final int[][] DYER_SIZE = {
+	public static final int[][] DYER_SIZE = {
 			{64, 64},
 			{64, 64},
 			{64, 64},
@@ -202,7 +202,7 @@ public final class Sheet {
 			{1, 1},
 	};
 	
-	public final int[][] WHEL = {
+	public static final int[][] WHEL = {
 			// Idle
 			{720,392},
 			// Working
@@ -221,12 +221,12 @@ public final class Sheet {
 			// Broken
 			{720,460},
 	};
-	public final int[][] WHEL_SIZE = {
+	public static final int[][] WHEL_SIZE = {
 			{96, 64},
 			{96, 84},
 			{96, 64},
 	};
-	public final int[][] LOOM = {
+	public static final int[][] LOOM = {
 			// Idle
 			{820,392},
 			// Working
@@ -245,12 +245,12 @@ public final class Sheet {
 			// Broken
 			{820,492},
 	};
-	public final int[][] LOOM_SIZE = {
+	public static final int[][] LOOM_SIZE = {
 			{64, 96},
 			{64, 128},
 			{64, 96},
 	};
-	public final int[][] BRRL = {
+	public static final int[][] BRRL = {
 			// Idle
 			{888,392},
 			// Working
@@ -269,28 +269,28 @@ public final class Sheet {
 			// Broken
 			{888,460},
 	};
-	public final int[][] BRRL_SIZE = {
+	public static final int[][] BRRL_SIZE = {
 			{64, 64},
 			{64, 96},
 			{64, 64},
 	};
 	
-	public final int[][] WOOL = {
+	public static final int[][] WOOL = {
 			{960, 4},
 			{960, 132},
 			{920, 260},
 	};
-	public final int[][] YARN = {
+	public static final int[][] YARN = {
 			{828, 4},
 			{828, 132},
 			{828, 260},
 	};
-	public final int[][] FBRC = {
+	public static final int[][] FBRC = {
 			{696, 4},
 			{696, 132},
 			{696, 260},
 	};
-	public final int[][] DFRC = {
+	public static final int[][] DFRC = {
 			{564, 4},
 			{564, 132},
 			{564, 260},

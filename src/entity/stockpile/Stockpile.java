@@ -15,7 +15,7 @@ public class Stockpile extends Entity {
 	
 	public Stockpile(int width, int height, int x, int y, int job) {
 		super(width, height, x, y);
-		this.state = 1;
+		setState(0);
 		this.job = job;
 		//ImageIcon icon = new ImageIcon(Settings.STOCKPILE_PATH[job-1]);
 		//image = icon.getImage();
@@ -23,6 +23,6 @@ public class Stockpile extends Entity {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(image, x, y, null);
+		g.drawImage(sprite, getX(), getY(), null);
 	}
 }

@@ -11,42 +11,42 @@ import javax.imageio.ImageIO;
 import main.Settings;
 
 public abstract class Entity {
-	protected int width;
-	protected int height;
-	protected int x;
-	protected int y;
-	protected int state;
+	private int width;
+	private int height;
+	private int x;
+	private int y;
+	private int state;
 		// Artisans
-		// 01 Walk l
-		// 02 Walk d
-		// 03 Walk u
-		// 04 Walk r
-		// 05 1Walk l + carry
-		// 06 1Walk d + carry
-		// 07 1Walk u + carry
-		// 08 1Walk r + carry
-		// 09 2Walk l + carry
-		// 10 2Walk d + carry
-		// 11 2Walk u + carry
-		// 12 2Walk r + carry
-		// 13 Stock l
-		// 14 Stock d
-		// 15 Stock u
-		// 16 Stock r
-		// 17 Working
+		// 00 Walk l
+		// 01 Walk d
+		// 02 Walk u
+		// 03 Walk r
+		// 04 1Walk l + carry
+		// 05 1Walk d + carry
+		// 06 1Walk u + carry
+		// 07 1Walk r + carry
+		// 08 2Walk l + carry
+		// 09 2Walk d + carry
+		// 10 2Walk u + carry
+		// 11 2Walk r + carry
+		// 12 Stock l
+		// 13 Stock d
+		// 14 Stock u
+		// 15 Stock r
+		// 16 Working
 	
 		// Structures
-		// 1 Idle
-		// 2 Working
-		// 3 Broken
+		// 0 Idle
+		// 1 Working
+		// 2 Broken
 	
 		// Stockpiles
-		// 1 Raw Wool
-		// 2 Yarn
-		// 3 Fabric
-		// 4 Dyed Fabric
+		// 0 Raw Wool
+		// 1 Yarn
+		// 2 Fabric
+		// 3 Dyed Fabric
 	
-	protected Image image;
+	protected Image sprite;
 	
 	//animation variables
 	protected BufferedImage sheet;

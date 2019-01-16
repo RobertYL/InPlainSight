@@ -8,7 +8,7 @@ import main.Settings;
 public class Loom extends Machine {
 	public Loom(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		image = sheet.getSubimage(820, 392, 64, 80);
+		sprite = sheet.getSubimage(820, 392, 64, 80);
 		frameX = 420;
 		frameY = 788;
 	}
@@ -16,9 +16,9 @@ public class Loom extends Machine {
 	@Override
 	public void render(Graphics g) {
 		if (frames < 0) {
-			g.drawImage(image, x, y, null);
+			g.drawImage(sprite, getX(), getY(), null);
 		} else {
-			g.drawImage(image, x, y - 48, null);
+			g.drawImage(sprite, getX(), getY(), null);
 		}
 	}
 	
@@ -26,10 +26,10 @@ public class Loom extends Machine {
 	public void tick() {
 		frames--;
 		if (frames < 0) {
-			image = sheet.getSubimage(820, 392, 64, 80);
+			sprite = sheet.getSubimage(820, 392, 64, 80);
 			return;
 		}
-		image = sheet.getSubimage(frameX, frameY, 64, 128);
+		sprite = sheet.getSubimage(frameX, frameY, 64, 128);
 		if (frames % 4 == 0) {
 			if (frames % 12 == 0) {
 				frameX = 420;
@@ -42,10 +42,41 @@ public class Loom extends Machine {
 			frameX += 64 + 4;
 		}
 	}
-	
+
+	@Override
+	public void idle() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isIdle() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	@Override
 	public void work() {
-		if (frames > 0) return;
-		frames = Settings.LOOM_FRAMES;
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public boolean isWork() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void broken() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isBroken() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

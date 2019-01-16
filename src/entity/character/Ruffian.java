@@ -21,7 +21,7 @@ public class Ruffian extends Entity {
 		case 3:
 			icon = new ImageIcon(Settings.DYER_PATH);
 		}
-		image = icon.getImage();
+		sprite = icon.getImage();
 	}
 	
 	public void update(int direction) {
@@ -39,13 +39,13 @@ public class Ruffian extends Entity {
 		case 4:
 			x = -1;
 		}
-		this.x += x * 4;
-		this.y += y * 4;
-		this.x = Math.max(Math.min(this.x, Settings.COL_NUM * 64 - this.width), 0);
-		this.y = Math.max(Math.min(this.y, Settings.ROW_NUM * 64 - this.height + 28), 28);
+		setX(getX() + x * 4);
+		setY(getY() + y * 4);
+		setX(Math.max(Math.min(getX(), Settings.COL_NUM * 64 - getWidth()), 0));
+		setY(Math.max(Math.min(getY(), Settings.ROW_NUM * 64 - getHeight() + 28), 28));
 	}
 	
 	public void render(Graphics g) {
-		g.drawImage(image, x, y, null);
+		g.drawImage(sprite, getX(), getY(), null);
 	}
 }

@@ -11,7 +11,7 @@ public abstract class Artisan extends Entity {
 	
 	public Artisan(int width, int height, int x, int y, int job) {
 		super(width, height, x, y);
-		this.state = 3;
+		setState(0);
 		this.job = job;
 	}
 	
