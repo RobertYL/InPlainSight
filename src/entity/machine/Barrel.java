@@ -2,79 +2,63 @@ package entity.machine;
 
 import java.awt.Graphics;
 
+import entity.machine.Machine;
 import main.Settings;
 import main.Sheet;
 
 public class Barrel extends Machine {
-	private int i = 0;
 	public Barrel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		sprite = sheet.getSubimage(Sheet.BRRL[getState()][0], Sheet.BRRL[getState()][1], Sheet.BRRL_SIZE[getState()][0], Sheet.BRRL_SIZE[getState()][1]);
+		sprite = sheet.getSubimage(Sheet.BRRL[getState()][0], Sheet.BRRL[getState()][1], 
+				Sheet.BRRL_SIZE[getState()][0], Sheet.BRRL_SIZE[getState()][1]);
 	}
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(sprite, getX(), getY(), null);
+		g.drawImage(sprite, getX(), getY()-(Sheet.BRRL_SIZE[getState()][1]-Settings.BARREL_HEIGHT), null);
 	}
 	
 	@Override
 	public void tick() {
-		if (i % 3 == 0) {
-			frames--;
-			if (frames < 0) {
-				sprite = sheet.getSubimage(720, 392, 96, 64);
-				return;
-			}
-			sprite = sheet.getSubimage(frameX, frameY, 64, 96);
-			if (frames % 4 == 0) {
-				if (frames % 12 == 0) {
-					frameX = 4;
-					frameY = 1144;
-				} else {
-					frameX = 4;
-					frameY += 96 + 4;
-				}
-			} else {
-				frameX += 64 + 4;
-			}
-		}
-		i++;
+		if(tick >= Sheet.BRRL[getState()].length/2)
+			idle();
+		sprite = sheet.getSubimage(Sheet.BRRL[getState()][tick*2], Sheet.BRRL[getState()][tick*2+1], 
+				Sheet.BRRL_SIZE[getState()][0], Sheet.BRRL_SIZE[getState()][1]);
+		tick++;
 	}
 
 	@Override
 	public void idle() {
-		// TODO Auto-generated method stub
-		
+		setState(0);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isIdle() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 0;
 	}
 
 	@Override
-	public void work() {
 		// TODO Auto-generated method stub
-		
+	public void work() {
+		setState(1);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isWork() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 1;
 	}
 
 	@Override
 	public void broken() {
-		// TODO Auto-generated method stub
-		
+		setState(2);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isBroken() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 2;
 	}
 
 }

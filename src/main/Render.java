@@ -23,7 +23,6 @@ public class Render {
 			
 			g.setColor(new Color(0, 0, 0));
 			g.fillRect(0, 0, 1920, 28);
-			g.fillRect(0, 1080-28, 1920, 28);
 		}
 	}
 	
@@ -38,9 +37,9 @@ public class Render {
 	}
 	
 	public static void artisans(Graphics g) {
-		for (int i = 0; i < Settings.ARTISAN_NUM; i++) {
+		/*for (int i = 0; i < Settings.ARTISAN_NUM; i++) {
 			MainController.artisans[i].render(g);
-		}
+		}*/
 	}
 	
 	public static void ruffians(Graphics g) {

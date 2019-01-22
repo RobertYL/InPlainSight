@@ -204,7 +204,7 @@ public final class Sheet {
 	
 	public static final int[][] WHEL = {
 			// Idle
-			{720,392},
+			{720,400},
 			// Working
 			{276,1144, 276,1144, 276,1232, 276,1232, 
 				276,1320, 276,1320, 276,1408, 276,1408,
@@ -219,7 +219,7 @@ public final class Sheet {
 				276,1144, 276,1144, 276,1232, 276,1232, 
 				276,1320, 276,1320, 276,1408, 276,1408,},
 			// Broken
-			{720,460},
+			{720,468},
 	};
 	public static final int[][] WHEL_SIZE = {
 			{96, 64},
@@ -228,7 +228,7 @@ public final class Sheet {
 	};
 	public static final int[][] LOOM = {
 			// Idle
-			{820,392},
+			{820,400},
 			// Working
 			{420,792, 488,792, 556,792, 624,792, 
 				420,924, 488,924, 556,924, 624,924, 
@@ -243,7 +243,7 @@ public final class Sheet {
 				420,924, 488,924, 556,924, 624,924, 
 				420,1056, 488,1056, 556,1056, 624,1056},
 			// Broken
-			{820,492},
+			{820,500},
 	};
 	public static final int[][] LOOM_SIZE = {
 			{64, 96},
@@ -252,7 +252,7 @@ public final class Sheet {
 	};
 	public static final int[][] BRRL = {
 			// Idle
-			{888,392},
+			{888,400},
 			// Working
 			{4,1144, 4,1144, 4,1144, 4,1144, 
 				72,1144, 72,1144, 72,1144, 72,1144, 
@@ -267,7 +267,7 @@ public final class Sheet {
 				140,1344, 140,1344, 140,1344, 140,1344, 
 				208,1344, 208,1344, 208,1344, 208,1344},
 			// Broken
-			{888,460},
+			{888,468},
 	};
 	public static final int[][] BRRL_SIZE = {
 			{64, 64},

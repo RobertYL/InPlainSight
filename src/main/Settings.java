@@ -5,8 +5,8 @@ public final class Settings {
 	
 	public static final boolean DEBUG = true;
 	
-	public static final int COL_NUM = 30;
-	public static final int ROW_NUM = 16;
+	public static final int COL_NUM = 60;
+	public static final int ROW_NUM = 32;
 	
 	public static final int RUFFIAN_NUM = 3;
 	public static final int PRODUCTION 	= 200;
@@ -16,10 +16,10 @@ public final class Settings {
 	public static final int WEAVER_NUM 	= 9;
 	public static final int DYER_NUM 	= 9;
 	
-	public static final int MACHINE_NUM = 15;
-	public static final int WHEEL_NUM 	= 4;
-	public static final int LOOM_NUM 	= 5;
-	public static final int BARREL_NUM 	= 6;
+	public static final int MACHINE_NUM = 26;
+	public static final int WHEEL_NUM 	= 11;
+	public static final int LOOM_NUM 	= 8;
+	public static final int BARREL_NUM 	= 7;
 	
 	public static final int SPINNER_WIDTH 	= 4*8;
 	public static final int SPINNER_HEIGHT 	= 4*16;

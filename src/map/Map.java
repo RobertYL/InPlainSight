@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import main.Settings;
 
 public class Map {
-	public int[][] map = new int[30][16];
+	public int[][] map = new int[Settings.COL_NUM][Settings.ROW_NUM];
 		// 0 Empty
 		// 1 Wall
 		// 2 Raw Wool Stockpile
@@ -84,6 +84,6 @@ public class Map {
 	}
 	
 	public static void render(Graphics g) {
-		g.drawImage(image, 0, 28, null);
+		g.drawImage(image, 0, 0, null);
 	}
 }

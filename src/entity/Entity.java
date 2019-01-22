@@ -50,9 +50,7 @@ public abstract class Entity {
 	
 	//animation variables
 	protected BufferedImage sheet;
-	protected int frames;
-	protected int frameX;
-	protected int frameY;
+	protected int tick;
 	
 	public Entity(int width, int height, int x, int y) {
 		this.width = width;

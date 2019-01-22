@@ -5,73 +5,61 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
 import main.Settings;
+import main.Sheet;
 
 public class Wheel extends Machine {
 	private int i = 0;
 	public Wheel(int width, int height, int x, int y, int job) {
 		super(width, height, x, y, job);
-		sprite = sheet.getSubimage(720, 392, 96, 64);
-		frameX = 276;
-		frameY = 1144;
+		sprite = sheet.getSubimage(Sheet.WHEL[getState()][0], Sheet.WHEL[getState()][1], 
+				Sheet.WHEL_SIZE[getState()][0], Sheet.WHEL_SIZE[getState()][1]);
 	}
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(sprite, getX(), getY(), null);
+		g.drawImage(sprite, getX(), getY()-(Sheet.WHEL_SIZE[getState()][1]-Settings.WHEEL_HEIGHT), null);
 	}
 	
 	@Override
 	public void tick() {
-		if (i % 3 == 0) {
-			frames--;
-			if (frames < 0) {
-				sprite = sheet.getSubimage(888, 392, 64, 64);
-				return;
-			}
-			sprite = sheet.getSubimage(frameX, frameY, 96, 84);
-			if (frames % 4 == 0) {
-				frameY = 1144;
-			} else {
-				frameY += 84 + 4;
-			}
-		}
-		i++;
+		if(tick >= Sheet.WHEL[getState()].length/2)
+			idle();
+		sprite = sheet.getSubimage(Sheet.WHEL[getState()][tick*2], Sheet.WHEL[getState()][tick*2+1], 
+				Sheet.WHEL_SIZE[getState()][0], Sheet.WHEL_SIZE[getState()][1]);
+		tick++;
 	}
 
 	@Override
 	public void idle() {
-		// TODO Auto-generated method stub
-		
+		setState(0);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isIdle() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 0;
 	}
 
 	@Override
-	public void work() {
 		// TODO Auto-generated method stub
-		
+	public void work() {
+		setState(1);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isWork() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 1;
 	}
 
 	@Override
 	public void broken() {
-		// TODO Auto-generated method stub
-		
+		setState(2);
+		tick = 0;
 	}
 
 	@Override
 	public boolean isBroken() {
-		// TODO Auto-generated method stub
-		return false;
+		return getState() == 2;
 	}
-	
 }
