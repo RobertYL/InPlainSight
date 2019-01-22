@@ -34,24 +34,50 @@ public class MainController extends JPanel implements ActionListener{
 	private Input input;
 	public static Map map;
 	
-	
-	private boolean inMenu = true;
+	enum State {
+		Menu,
+		Instructions,
+		Game
+	}
+	State state = State.Menu;
 	
 	public void paint(Graphics g) {
 		Toolkit.getDefaultToolkit().sync();
 		super.paintComponent(g);
-		if (inMenu) {
-			if (input.getMouse()[0] != 0) {
-				inMenu = false;
+		int x = input.getMouse()[0], y = input.getMouse()[1];
+		switch (state) {
+		case Menu:
+			g.drawImage(new ImageIcon("src/resources/title.png").getImage(), 0, 0, null);
+			g.setFont(new Font("TimesRoman", Font.PLAIN, 200));
+			if (x > 750 && x < 750 + 390 && y > 240 && y < 240 + 200) {
+				state = State.Game;
 			}
 			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, 1920, 1080);
-			ImageIcon icon = new ImageIcon("src/resources/title.png");
-			g.drawImage(icon.getImage(), 0, 0, null);
+			g.fillRect(750, 240, 390, 200);
+			g.setColor(Color.WHITE);
+			g.drawString("Start", 750, 400);
+			if (x > 500 && x < 500 + 950 && y > 540 && y < 540 + 185) {
+				state = State.Instructions;
+			}
+			g.setColor(Color.BLACK);
+			g.fillRect(500, 540, 950, 185);
+			g.setColor(Color.WHITE);
+			g.drawString("Instructions", 500, 700);
+			break;
+		case Instructions:
+			g.drawImage(new ImageIcon("src/resources/title.png").getImage(), 0, 0, null);
 			g.setColor(Color.WHITE);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 200));
-			g.drawString("click anywhere to start", 50, 540);
-		} else {
+			g.drawString("asfdasfdfdsa", 100, 100);
+			if (x > 750 && x < 750 + 420 && y > 840 && y < 840 + 185) {
+				state = State.Menu;
+			}
+			g.setColor(Color.BLACK);
+			g.fillRect(750, 840, 420, 185);
+			g.setColor(Color.WHITE);
+			g.drawString("Back", 750, 1000);
+			break;
+		case Game:
 			input.tick();
 			Update.update(input.getInput(), input.getDTap(), input.getMouse());
 			Render.render(g);
