@@ -3,7 +3,7 @@ package main;
 public final class Settings {
 	public static final int FPS = 30;
 	
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	
 	public static final int COL_NUM = 60;
 	public static final int ROW_NUM = 32;

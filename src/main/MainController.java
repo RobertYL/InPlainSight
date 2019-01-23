@@ -52,15 +52,15 @@ public class MainController extends JPanel implements ActionListener{
 			if (x > 750 && x < 750 + 390 && y > 240 && y < 240 + 200) {
 				state = State.Game;
 			}
-			g.setColor(Color.BLACK);
-			g.fillRect(750, 240, 390, 200);
+			//g.setColor(Color.BLACK);
+			//g.fillRect(750, 240, 390, 200);
 			g.setColor(Color.WHITE);
 			g.drawString("Start", 750, 400);
 			if (x > 500 && x < 500 + 950 && y > 540 && y < 540 + 185) {
 				state = State.Instructions;
 			}
-			g.setColor(Color.BLACK);
-			g.fillRect(500, 540, 950, 185);
+			//g.setColor(Color.BLACK);
+			//g.fillRect(500, 540, 950, 185);
 			g.setColor(Color.WHITE);
 			g.drawString("Instructions", 500, 700);
 			break;
